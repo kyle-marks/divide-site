@@ -330,3 +330,19 @@ a:hover { color: var(--sage); }
   .shots li { scroll-snap-align: start; }
   .shots img { border-radius: 28px; }
 }
+
+/* ---------- Changelog ---------- */
+
+.changelog .release { scroll-margin-top: 24px; }
+.changelog .release h2 { margin-bottom: 6px; }
+.changelog .release .meta { margin: 0 0 8px; }
+.changelog .release .meta a { color: inherit; }
+.changelog h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sage-deep);
+  margin: 20px 0 4px;
+}
+.changelog ul { margin: 0; }
+.changelog .empty { color: var(--muted); }
+.site-nav a[aria-current="page"] { color: var(--ink); }

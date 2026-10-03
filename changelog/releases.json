@@ -1,0 +1,253 @@
+[
+  {
+    "build": 16,
+    "date": "2026-10-02",
+    "headline": "Recurring expenses are back",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Recurring expenses return: set up rent, bills, and subscriptions once, and Divide adds each expense when it comes due."
+      },
+      {
+        "kind": "improved",
+        "text": "Recurring expenses can use your group's own categories, and keep working if a category is later archived."
+      }
+    ]
+  },
+  {
+    "build": 15,
+    "date": "2026-09-25",
+    "headline": "Easier reading on iPad",
+    "items": [
+      {
+        "kind": "improved",
+        "text": "On a full-screen iPad, text is larger so the receipt layout is comfortable to read."
+      },
+      {
+        "kind": "improved",
+        "text": "Insights stays on screen while a new month or range loads, instead of flashing a loading page."
+      }
+    ]
+  },
+  {
+    "build": 14,
+    "date": "2026-09-23",
+    "headline": "Divide on iPad, and any past month in Insights",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Divide now runs on iPad, in any orientation and in Split View, with keyboard shortcuts like ⌘N to add an expense."
+      },
+      {
+        "kind": "new",
+        "text": "Browse any past month in Insights, back to your group's first expense."
+      },
+      {
+        "kind": "new",
+        "text": "Sort a category's expenses by date or by amount."
+      },
+      {
+        "kind": "improved",
+        "text": "Insights names the month you're looking at, like \"Biggest in June\", and months you've just viewed open instantly."
+      }
+    ]
+  },
+  {
+    "build": 13,
+    "date": "2026-09-15",
+    "headline": "Faster entry and a deeper Insights",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Add several expenses in a row: the Add sheet stays open after you save, keeps a running list of what you added, and lets you undo the last one."
+      },
+      {
+        "kind": "new",
+        "text": "Insights now covers the past 3, 6, or 12 months or all time, compares spending with earlier periods, and lets you tap a category to see its expenses."
+      },
+      {
+        "kind": "new",
+        "text": "The Tab points out expenses filed under Other, so you can move them to a better category."
+      },
+      {
+        "kind": "improved",
+        "text": "Every expense shows its category icon, and the tab bar and add button have a cleaner look."
+      }
+    ]
+  },
+  {
+    "build": 12,
+    "date": "2026-09-13",
+    "headline": "Your own categories",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Rename the built-in categories, or add your own, from the You tab. Each group keeps its own list."
+      },
+      {
+        "kind": "improved",
+        "text": "Adding or editing an expense offers your group's categories, including the ones you've made."
+      }
+    ]
+  },
+  {
+    "build": 11,
+    "date": "2026-09-13",
+    "headline": "Backdate an expense",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Change an expense's date when you add it, for something you paid for earlier."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed the date picker choosing a date while you were still scrolling through months."
+      }
+    ]
+  },
+  {
+    "build": 10,
+    "date": "2026-09-13",
+    "headline": "Clearer balances and quicker splits",
+    "items": [
+      {
+        "kind": "improved",
+        "text": "Balances show a plus or minus sign as well as colour, and every expense shows what it means for you."
+      },
+      {
+        "kind": "improved",
+        "text": "Expenses show who paid, and who added them when that's someone else."
+      },
+      {
+        "kind": "new",
+        "text": "Split an expense in one tap: 50/50, or one person owes all of it."
+      },
+      {
+        "kind": "improved",
+        "text": "Home shows the last eight expenses, and you can pull down to refresh."
+      },
+      {
+        "kind": "improved",
+        "text": "Adding an expense explains what's missing instead of quietly not saving, and the keypad steps aside while you type a note."
+      }
+    ]
+  },
+  {
+    "build": 9,
+    "date": "2026-07-24",
+    "headline": "Recurring expenses (preview)",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Set up rent, subscriptions, and other repeating costs once, weekly, every two weeks, monthly, or yearly, and Divide adds each expense when it comes due."
+      },
+      {
+        "kind": "new",
+        "text": "When a recurring expense starts in the past, Divide shows how many expenses it will add and their total before adding them."
+      }
+    ]
+  },
+  {
+    "build": 8,
+    "date": "2026-07-23",
+    "headline": "Account deletion and smoother sign-in",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Delete your account from the You tab. Expenses you shared stay in your groups' records without your name."
+      },
+      {
+        "kind": "improved",
+        "text": "If your session ends, Divide takes you back to sign-in and tells you why, instead of showing connection errors."
+      },
+      {
+        "kind": "improved",
+        "text": "Divide stays in portrait on iPhone, where its layout is designed to be read."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed editing an expense in some languages and regions changing its amount, such as $12.34 becoming $1,234.00."
+      }
+    ]
+  },
+  {
+    "build": 7,
+    "date": "2026-07-20",
+    "headline": "Add Expense from your Home Screen",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Press and hold the Divide icon on your Home Screen and choose Add Expense to jump straight to a new expense."
+      }
+    ]
+  },
+  {
+    "build": 6,
+    "date": "2026-07-18",
+    "headline": "A new look: the receipt tab",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Divide has a new design that reads like a shared receipt, with Home, The Tab, Insights, and You tabs and a button in the middle for adding an expense."
+      },
+      {
+        "kind": "new",
+        "text": "Home opens on your main group and shows where you stand, this month's spending by category, and the latest expenses."
+      },
+      {
+        "kind": "new",
+        "text": "The Tab lists every expense by month, with the running balance at the bottom."
+      },
+      {
+        "kind": "new",
+        "text": "Insights shows the month's total, a breakdown by category, and how spending has changed over recent months."
+      },
+      {
+        "kind": "new",
+        "text": "Settle up records a payment between you in one step, and you can switch groups from a sheet on Home."
+      },
+      {
+        "kind": "improved",
+        "text": "Better VoiceOver labels throughout the app."
+      }
+    ]
+  },
+  {
+    "build": 5,
+    "date": "2026-07-15",
+    "headline": "Add an expense from anywhere",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Add an expense straight from your group list. Divide picks the group you last added to, and you can switch groups in the form."
+      }
+    ]
+  },
+  {
+    "build": 4,
+    "date": "2026-07-14",
+    "headline": "Balances in your group list",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Each group in your list now shows your balance with that group, so you can see where you stand without opening it."
+      },
+      {
+        "kind": "improved",
+        "text": "Activity is grouped by day, and each expense shows an icon for its category."
+      },
+      {
+        "kind": "improved",
+        "text": "On a group's balances, your own row comes first and stands out from everyone else's."
+      },
+      {
+        "kind": "improved",
+        "text": "Quick Add puts the cursor in the amount right away, shows the currency, and has a key to move on to the description."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed group balances going blank when you opened a group while the list was still refreshing."
+      }
+    ]
+  }
+]
