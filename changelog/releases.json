@@ -1,5 +1,28 @@
 [
   {
+    "build": 17,
+    "date": "2026-10-03",
+    "headline": "Your name from Apple, and account settings",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Divide uses the name you share when you sign in with Apple, so there's no display name to set up. Change it anytime under You → Display name."
+      },
+      {
+        "kind": "new",
+        "text": "The privacy policy and support pages are linked from the You tab and the sign-in screen."
+      },
+      {
+        "kind": "improved",
+        "text": "Deleting your account now asks you to confirm with your Apple ID, and disconnects Divide from it."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed account settings, including Delete account, being out of reach before you joined a group. They're now under Account on the start screen."
+      }
+    ]
+  },
+  {
     "build": 16,
     "date": "2026-10-02",
     "headline": "Recurring expenses are back",
