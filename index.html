@@ -3,39 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Divide</title>
-  <meta name="description" content="Divide splits shared expenses within small groups of people who know each other.">
+  <title>Divide — a running tab for the people you live with</title>
+  <meta name="description" content="Divide keeps a running tab of shared expenses between roommates and partners, so nobody has to keep score in their head. For iPhone and iPad.">
+  <meta name="theme-color" content="#ECEEE4">
   <link rel="icon" href="icon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="site-header">
+  <a class="brand" href="./"><img src="icon.png" alt="">Divide</a>
+  <nav class="site-nav" aria-label="Site">
+    <a href="privacy/">Privacy</a>
+    <a href="support/">Support</a>
+  </nav>
+</header>
+
 <main>
-  <a class="masthead" href="./"><img src="icon.png" alt=""><span>Divide</span></a>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Keep a running tab with the people you live with.</h1>
+      <p class="lede">Add what you spent in a few taps. Divide keeps the tally
+      and shows where you stand, so nobody has to keep score in their head.</p>
+      <div class="availability">
+        <a class="button" href="mailto:kyle.m.marks@icloud.com?subject=Divide%20beta">Ask to join the beta</a>
+        <p>For iPhone and iPad. Coming to the App Store.</p>
+      </div>
+    </div>
 
-  <h1>Split shared expenses, without the spreadsheet.</h1>
-  <p class="lede">Divide keeps track of who paid for what in your household, trip, or
-  friend group, and shows everyone what they owe.</p>
+    <div class="receipt-wrap">
+      <article class="receipt" aria-label="Example tab for October: Drea owes Kyle $66.37">
+        <header class="receipt-head">
+          <p class="group">The Apartment</p>
+          <p>Kyle &amp; Drea · split 50/50</p>
+        </header>
+        <hr>
+        <table>
+          <caption>October 2026</caption>
+          <tbody>
+            <tr><th>Hydro<span class="sub">Oct 1 · Kyle · Monthly</span></th><td>86.40</td></tr>
+            <tr><th>Internet<span class="sub">Oct 3 · Kyle · Monthly</span></th><td>75.00</td></tr>
+            <tr><th>Costco stock-up<span class="sub">Oct 5 · Drea · Groceries</span></th><td>182.36</td></tr>
+            <tr><th>Tacos<span class="sub">Oct 9 · Kyle · Dining</span></th><td>42.00</td></tr>
+            <tr><th>Cat food<span class="sub">Oct 12 · Drea · Groceries</span></th><td>39.00</td></tr>
+            <tr><th>Coffee beans<span class="sub">Oct 14 · Kyle · Groceries</span></th><td>24.00</td></tr>
+            <tr><th>Save-On-Foods<span class="sub">Oct 18 · Kyle · Groceries</span></th><td>126.70</td></tr>
+          </tbody>
+        </table>
+        <hr>
+        <table>
+          <tbody>
+            <tr class="total"><th>Total</th><td>575.46</td></tr>
+          </tbody>
+        </table>
+        <hr>
+        <div class="stand">
+          <div>
+            <p class="label">Where you stand</p>
+            <p class="who">Drea owes you</p>
+          </div>
+          <p class="amount">$66<span class="cents">.37</span></p>
+        </div>
+        <hr>
+        <p class="receipt-foot">No rush · settle whenever</p>
+      </article>
+    </div>
+  </section>
 
-  <h2>What it does</h2>
-  <ul>
-    <li>Record expenses and split them evenly, by exact amounts, or by percentage.</li>
-    <li>Set up recurring expenses like rent and utilities once.</li>
-    <li>See running balances and record payments when you settle up.</li>
-    <li>Look back at spending by category and month.</li>
-    <li>Keep working offline with your recent group data.</li>
-  </ul>
+  <section class="tour" aria-labelledby="tour-title">
+    <h2 id="tour-title">Built for the everyday, not the big trip.</h2>
+    <ul class="shots">
+      <li>
+        <img src="shots/home.jpg" width="602" height="1310" alt="Divide's home screen for The Apartment: Drea owes you $66.37, spending by category, and the latest expenses.">
+        <h3>See where you stand</h3>
+        <p>The balance is the first thing you see, with this month's spending by category under it.</p>
+      </li>
+      <li>
+        <img src="shots/add.jpg" width="602" height="1310" alt="Adding an expense: $42.00 for dining above a number pad, paid by you and split 50/50, with three expenses already added this session.">
+        <h3>Add it before you forget</h3>
+        <p>Type the amount and go. Who paid and the split are filled in, and the sheet stays open for the next one, so a whole receipt pile takes a minute.</p>
+      </li>
+      <li>
+        <img src="shots/insights.jpg" width="602" height="1310" alt="Insights for October: $575.46 spent across 7 expenses, broken down by category, with the biggest expenses listed.">
+        <h3>Look back at the month</h3>
+        <p>What the month cost, where it went by category, and which expenses were biggest.</p>
+      </li>
+    </ul>
+  </section>
 
-  <h2>Privacy</h2>
-  <p>You sign in with Apple. Divide has no ads, no tracking, and no
-  third-party analytics. Only the members of a group can see what is in it.
-  Read the <a href="privacy/">privacy policy</a>.</p>
-
-  <p>Divide is for iPhone and iPad.</p>
-
-  <footer>
-    <a href="privacy/">Privacy</a><a href="support/">Support</a>
-  </footer>
+  <section class="omissions" aria-labelledby="omissions-title">
+    <h2 id="omissions-title">What Divide leaves out.</h2>
+    <dl>
+      <dt>Reminders to pay up</dt>
+      <dd>Divide never nudges anyone. The balance just carries over, and you settle when it suits you both.</dd>
+      <dt>Your money</dt>
+      <dd>Divide doesn't move money or connect to your bank. Pay each other however you already do, then record it.</dd>
+      <dt>Ads and tracking</dt>
+      <dd>No ads, no analytics, and nothing shared with data brokers. Only the people in a group can see what's in it.</dd>
+      <dt>Passwords</dt>
+      <dd>You sign in with Apple, and Divide never asks for your email address.</dd>
+    </dl>
+  </section>
 </main>
+
+<footer class="site-footer">
+  <p>Made in Vancouver by Kyle Marks.</p>
+  <nav aria-label="Footer">
+    <a href="privacy/">Privacy policy</a>
+    <a href="support/">Support</a>
+  </nav>
+</footer>
 </body>
 </html>
