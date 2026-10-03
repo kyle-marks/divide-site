@@ -346,3 +346,37 @@ a:hover { color: var(--sage); }
 .changelog ul { margin: 0; }
 .changelog .empty { color: var(--muted); }
 .site-nav a[aria-current="page"] { color: var(--ink); }
+
+/* ---------- Landing: iPad ---------- */
+
+.ipad {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px 88px;
+  border-top: 1px dashed var(--rule);
+}
+.ipad h2 {
+  font: 400 clamp(36px, 5vw, 52px)/1.02 var(--serif);
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+.ipad-copy p { margin: 0 0 40px; color: #4A5242; max-width: 34em; }
+.ipad-device {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(8px, 1.3vw, 16px);
+  border-radius: clamp(20px, 3.2vw, 40px);
+  background: var(--ink);
+  box-shadow: 0 28px 56px rgba(35, 42, 31, 0.18), 0 2px 4px rgba(35, 42, 31, 0.12);
+}
+.ipad-device img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(12px, 2vw, 26px);
+}
+@media (min-width: 900px) {
+  .ipad-copy { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 72px; align-items: end; margin-bottom: 40px; }
+  .ipad-copy h2 { margin: 0; }
+  .ipad-copy p { margin: 0; }
+}
