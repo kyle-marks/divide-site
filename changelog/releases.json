@@ -1,5 +1,24 @@
 [
   {
+    "build": 19,
+    "date": "2026-10-03",
+    "headline": "Groups carry on when someone deletes their account",
+    "items": [
+      {
+        "kind": "improved",
+        "text": "If someone deletes their account, any balance left with them shows as Former member, and you can settle it as usual."
+      },
+      {
+        "kind": "improved",
+        "text": "When a group's only owner deletes their account, the member who has been in the group longest becomes the owner."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed the member count on Home including people who had already left the group."
+      }
+    ]
+  },
+  {
     "build": 17,
     "date": "2026-10-03",
     "headline": "Your name from Apple, and account settings",
