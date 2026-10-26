@@ -1,5 +1,24 @@
 [
   {
+    "build": 20,
+    "date": "2026-10-25",
+    "headline": "Layouts for iPhone Duo",
+    "items": [
+      {
+        "kind": "new",
+        "text": "On iPhone Duo, Home and Insights split their two columns along the fold, and the Add button sits in the side bar above the tabs."
+      },
+      {
+        "kind": "new",
+        "text": "When the screen is wider than tall, The Tab shows an expense's details beside the list, and the Add screen puts the amount entry next to the register."
+      },
+      {
+        "kind": "improved",
+        "text": "Unfolding or rotating while adding an expense keeps the amount and your place."
+      }
+    ]
+  },
+  {
     "build": 19,
     "date": "2026-10-03",
     "headline": "Groups carry on when someone deletes their account",
