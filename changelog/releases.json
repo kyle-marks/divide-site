@@ -1,5 +1,16 @@
 [
   {
+    "build": 22,
+    "date": "2026-10-26",
+    "headline": "Category fix",
+    "items": [
+      {
+        "kind": "fixed",
+        "text": "Fixed the category list when adding an expense showing old names after a category was renamed or added."
+      }
+    ]
+  },
+  {
     "build": 21,
     "date": "2026-10-26",
     "headline": "A better layout for iPhone Duo",
