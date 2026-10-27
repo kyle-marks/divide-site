@@ -1,5 +1,24 @@
 [
   {
+    "build": 23,
+    "date": "2026-10-27",
+    "headline": "Full-screen tabs on iPhone Duo",
+    "items": [
+      {
+        "kind": "improved",
+        "text": "On an open iPhone Duo, every tab uses the full screen again, with Home and Insights set in two columns either side of the fold."
+      },
+      {
+        "kind": "improved",
+        "text": "On an open iPhone Duo, tapping Add or an expense slides the register in beside the tab. Hide puts it away and keeps what you've typed for next time."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed the amount keypad sitting small in the corner of the register on an open iPhone Duo."
+      }
+    ]
+  },
+  {
     "build": 22,
     "date": "2026-10-26",
     "headline": "Category fix",
