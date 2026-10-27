@@ -1,5 +1,24 @@
 [
   {
+    "build": 21,
+    "date": "2026-10-26",
+    "headline": "A better layout for iPhone Duo",
+    "items": [
+      {
+        "kind": "improved",
+        "text": "When iPhone Duo is open, every tab has an add-expense panel beside it, so you can enter an expense while you look over your balances or the tab."
+      },
+      {
+        "kind": "improved",
+        "text": "On open iPhone Duo, tapping an expense in The Tab or Lately opens it for editing in that panel. Anything you were halfway through adding is kept until you finish the edit."
+      },
+      {
+        "kind": "improved",
+        "text": "When iPhone Duo is closed, the Add button sits with the tab buttons along the side of the screen."
+      }
+    ]
+  },
+  {
     "build": 20,
     "date": "2026-10-25",
     "headline": "Layouts for iPhone Duo",
