@@ -1,5 +1,32 @@
 [
   {
+    "build": 25,
+    "date": "2026-11-08",
+    "headline": "A new Insights, made for iPhone Duo",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Insights shows your spending as blocks sized by category. Tap a block to see that category's total, how it compares to last month, and its expenses, then swipe to the next category."
+      },
+      {
+        "kind": "new",
+        "text": "A spending line compares this month so far with last month, so you can see whether you're ahead or behind. Pick any month or year to look back."
+      },
+      {
+        "kind": "new",
+        "text": "On iPhone Duo, Insights opens as two pages: categories on one side and details on the other. Half-fold it and the chart stands up while the controls stay within reach."
+      },
+      {
+        "kind": "improved",
+        "text": "Sign-in, setting up your name, and creating or joining your first group now match the rest of Divide."
+      },
+      {
+        "kind": "improved",
+        "text": "The keys on the amount keypad now respond anywhere on the key, not only on the number."
+      }
+    ]
+  },
+  {
     "build": 24,
     "date": "2026-11-07",
     "headline": "Siri and Shortcuts",
