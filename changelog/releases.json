@@ -1,5 +1,20 @@
 [
   {
+    "build": 28,
+    "date": "2026-11-08",
+    "headline": "A matching look for your group settings",
+    "items": [
+      {
+        "kind": "improved",
+        "text": "Members, invite codes, categories and recurring expenses now match the rest of Divide's receipt look. Members and Invite Codes also have a Done button."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed a blank screen on iPhone Duo when tapping Add a second time while unfolded."
+      }
+    ]
+  },
+  {
     "build": 27,
     "date": "2026-11-08",
     "headline": "Cleaner category pages in Insights",
