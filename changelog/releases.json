@@ -1,5 +1,16 @@
 [
   {
+    "build": 29,
+    "date": "2026-11-08",
+    "headline": "Custom categories in Insights blocks",
+    "items": [
+      {
+        "kind": "fixed",
+        "text": "Fixed custom categories being grouped into a single Other box in the Insights and Home spending blocks. Each custom category now has its own box."
+      }
+    ]
+  },
+  {
     "build": 28,
     "date": "2026-11-08",
     "headline": "A matching look for your group settings",
