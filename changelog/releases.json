@@ -1,5 +1,16 @@
 [
   {
+    "build": 27,
+    "date": "2026-11-08",
+    "headline": "Cleaner category pages in Insights",
+    "items": [
+      {
+        "kind": "fixed",
+        "text": "Fixed a category's name appearing a second time as a large heading at the top of its Insights page, most noticeable on a closed iPhone Duo."
+      }
+    ]
+  },
+  {
     "build": 26,
     "date": "2026-11-08",
     "headline": "Fuller Home on iPhone Duo and iPad",
