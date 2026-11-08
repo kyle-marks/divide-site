@@ -1,5 +1,28 @@
 [
   {
+    "build": 26,
+    "date": "2026-11-08",
+    "headline": "Fuller Home on iPhone Duo and iPad",
+    "items": [
+      {
+        "kind": "new",
+        "text": "On an open iPhone Duo or an iPad, Home now shows this month's spending as category blocks beside your recent activity. Tap a block to open that category in Insights."
+      },
+      {
+        "kind": "improved",
+        "text": "Choosing a category, month, group, tab, or expense now gives a light tap of haptic feedback."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed the month picker in Insights on an open iPhone Duo, which opened too small to choose a month."
+      },
+      {
+        "kind": "fixed",
+        "text": "Fixed Insights sometimes showing the wrong category's details after switching months."
+      }
+    ]
+  },
+  {
     "build": 25,
     "date": "2026-11-08",
     "headline": "A new Insights, made for iPhone Duo",
