@@ -1,5 +1,24 @@
 [
   {
+    "build": 24,
+    "date": "2026-11-07",
+    "headline": "Siri and Shortcuts",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Add an expense, check balances, settle up, or see what your group spent this month by asking Siri, for example \"Add an expense in Divide\"."
+      },
+      {
+        "kind": "new",
+        "text": "Divide actions are available in the Shortcuts app, including finding and deleting expenses, so you can build your own automations."
+      },
+      {
+        "kind": "new",
+        "text": "An expense added with Siri shows a summary card with an Undo button, and appears in the app right away. Settling up and deleting ask you to confirm first."
+      }
+    ]
+  },
+  {
     "build": 23,
     "date": "2026-10-27",
     "headline": "Full-screen tabs on iPhone Duo",
