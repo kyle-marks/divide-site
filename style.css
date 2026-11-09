@@ -258,41 +258,260 @@ a:hover { color: var(--sage); }
   }
 }
 
-/* ---------- Landing: screenshots ---------- */
+/* ---------- Landing: shared section headings ---------- */
 
-.tour {
+.for-home h2, .feature h2, .duo h2, .omissions h2, .get-it h2 {
+  font: 400 clamp(36px, 5vw, 52px)/1.02 var(--serif);
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+  max-width: 16em;
+  text-wrap: balance;
+}
+
+/* ---------- Landing: header beta button ---------- */
+
+.site-header:has(.header-cta) { position: sticky; top: 0; z-index: 10; background: var(--paper); }
+.button-small { min-height: 40px; padding: 0 16px; border-radius: 11px; font-size: 15px; }
+.header-cta[hidden] { display: none; }
+@media (max-width: 599px) {
+  .site-header { flex-wrap: wrap; padding: 14px 16px; }
+  .site-nav { gap: 14px; }
+  .header-cta { order: 3; width: 100%; justify-content: center; }
+}
+
+/* ---------- Landing: Siri request above the receipt ---------- */
+
+.siri-ask {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin: 0 auto 22px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--slip);
+  font-size: 15px;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(35, 42, 31, 0.08);
+}
+.siri-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clay);
+  flex: none;
+}
+.receipt .siri-line th, .receipt .siri-line td { background: rgba(95, 114, 80, 0.1); }
+.receipt .siri-line th { padding-left: 6px; }
+.receipt .siri-line td { padding-right: 6px; }
+
+/* Before the hero plays (set by site.js only when motion is allowed). */
+.is-rewound .siri-ask { opacity: 0; transform: translateY(6px); }
+.is-rewound .siri-line { display: none; }
+.siri-ask { transition: opacity 0.4s ease, transform 0.4s ease; }
+.siri-line.is-printing th, .siri-line.is-printing td { animation: print 0.5s ease-out both; }
+@keyframes print { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Landing: who it's for ---------- */
+
+.for-home {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px 80px;
+  border-top: 1px dashed var(--rule);
+}
+.for-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px 40px;
+  color: #4A5242;
+}
+.for-list strong { display: block; color: var(--ink); font: 400 26px/1.1 var(--serif); margin-bottom: 4px; }
+
+/* ---------- Landing: feature rows ---------- */
+
+.feature {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px 80px;
+  border-top: 1px dashed var(--rule);
+  display: grid;
+  gap: 36px;
+  align-items: center;
+}
+.feature-copy p { margin: 0; color: #4A5242; max-width: 30em; font-size: 18px; }
+.feature-media.phone {
+  justify-self: center;
+  width: min(100%, 300px);
+}
+.feature-media.phone video,
+.feature-media.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 1564;
+  object-fit: cover;
+  border-radius: 34px;
+  border: 1px solid rgba(35, 42, 31, 0.12);
+  background: var(--surface);
+  box-shadow: 0 16px 32px rgba(35, 42, 31, 0.1);
+}
+@media (min-width: 900px) {
+  .feature { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; }
+  .feature-flip .feature-copy { order: 2; }
+}
+
+/* ---------- Landing: iPhone Duo ---------- */
+
+.duo {
   max-width: 1120px;
   margin: 0 auto;
   padding: 72px 24px 88px;
   border-top: 1px dashed var(--rule);
-}
-.tour h2, .omissions h2 {
-  font: 400 clamp(36px, 5vw, 52px)/1.02 var(--serif);
-  letter-spacing: -0.01em;
-  margin: 0 0 48px;
-  max-width: 16em;
-  text-wrap: balance;
-}
-.shots {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 48px 40px;
+  gap: 40px;
+  align-items: center;
 }
-.shots img {
+@media (min-width: 900px) {
+  .duo { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; }
+}
+.duo-intro { margin: 0 0 24px; color: #4A5242; font-size: 18px; }
+.duo-poses { display: grid; gap: 10px; }
+.pose-button {
   display: block;
   width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 34px;
-  border: 1px solid rgba(35, 42, 31, 0.12);
-  background: var(--paper);
-  box-shadow: 0 16px 32px rgba(35, 42, 31, 0.1);
+  text-align: left;
+  font: inherit;
+  color: #4A5242;
+  background: transparent;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-.shots h3 { font: 400 28px/1.1 var(--serif); margin: 24px 0 6px; }
-.shots p { margin: 0; color: #4A5242; max-width: 28em; }
+.pose-button strong { display: block; color: var(--ink); font: 400 24px/1.1 var(--serif); margin-bottom: 2px; }
+.pose-button span { font-size: 15px; }
+.pose-button:hover { border-color: var(--rule); }
+.pose-button[aria-pressed="true"] { background: var(--slip); border-color: var(--rule); box-shadow: 0 1px 2px rgba(35, 42, 31, 0.08); }
+
+/* The device: one frame whose screens swap, with a fold in between. */
+.duo-stage {
+  --open-w: 100%;
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  justify-self: center;
+  aspect-ratio: var(--duo-open-ratio, 1.42);
+  perspective: 1600px;
+}
+.duo-screen {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  padding: 10px;
+  border-radius: 34px;
+  background: var(--ink);
+  box-shadow: 0 28px 56px rgba(35, 42, 31, 0.18), 0 2px 4px rgba(35, 42, 31, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, transform 0.7s cubic-bezier(0.3, 0.7, 0.2, 1), visibility 0s linear 0.7s;
+}
+.duo-screen video, .duo-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  background: var(--surface);
+}
+.duo-screen-open { transform-origin: 50% 50%; }
+.duo-hinge {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.35) 15%, rgba(255, 255, 255, 0.35) 85%, transparent);
+  pointer-events: none;
+}
+.duo-screen-closed {
+  width: calc(100% / var(--duo-open-ratio, 1.42) * var(--duo-closed-ratio, 0.46));
+  transform: rotateY(-25deg) scale(0.92);
+}
+.duo-screen-open { transform: rotateY(60deg) scale(0.6); }
+.duo-screen-half {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  transform: rotateX(0deg);
+  transform-style: preserve-3d;
+}
+.duo-screen-half .half-top,
+.duo-screen-half .half-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+  background: var(--ink);
+  padding: 10px;
+}
+.duo-screen-half .half-top {
+  top: 0;
+  border-radius: 34px 34px 4px 4px;
+  padding-bottom: 0;
+  transform-origin: 50% 100%;
+  transform: rotateX(0deg);
+  transition: transform 0.8s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+.duo-screen-half .half-bottom {
+  bottom: 0;
+  border-radius: 4px 4px 34px 34px;
+  padding-top: 0;
+  box-shadow: 0 28px 56px rgba(35, 42, 31, 0.18);
+}
+.duo-screen-half img {
+  height: 200%;
+  border-radius: 25px;
+}
+.duo-screen-half .half-top img { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.duo-screen-half .half-bottom img { transform: translateY(-50%); border-top-left-radius: 0; border-top-right-radius: 0; }
+
+.duo-stage[data-pose="closed"] .duo-screen-closed,
+.duo-stage[data-pose="open"] .duo-screen-open,
+.duo-stage[data-pose="half"] .duo-screen-half {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.35s ease 0.15s, transform 0.7s cubic-bezier(0.3, 0.7, 0.2, 1), visibility 0s;
+}
+.duo-stage[data-pose="half"] .half-top { transform: rotateX(-38deg); transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .duo-screen, .duo-screen-half .half-top { transition: none !important; }
+}
+
+/* ---------- Landing: closing call to action ---------- */
+
+.get-it {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 80px 24px 96px;
+  border-top: 1px dashed var(--rule);
+  text-align: center;
+}
+.get-it h2 { margin: 0 auto 32px; }
+.get-it p { margin: 16px 0 0; color: var(--muted); font-size: 15px; }
+
+/* Phones: the side gutter is 16px. */
+@media (max-width: 599px) {
+  .hero, .for-home, .feature, .duo, .ipad, .omissions, .get-it { padding-left: 16px; padding-right: 16px; }
+  .site-footer { padding-left: 16px; padding-right: 16px; }
+}
 
 /* ---------- Landing: what it leaves out ---------- */
 
@@ -312,24 +531,6 @@ a:hover { color: var(--sage); }
 .omissions dt { font-size: 19px; font-weight: 600; }
 .omissions dd { margin: 4px 0 0; color: #4A5242; max-width: 34em; }
 .omissions dd + dt { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--hairline); }
-
-/* Phones: the screenshots sit side by side in a swipeable row instead of
-   stacking three tall images. */
-@media (max-width: 699px) {
-  .shots {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: min(78%, 300px);
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin: 0 -24px;
-    padding: 0 24px 24px;
-    scroll-padding: 0 24px;
-  }
-  .shots li { scroll-snap-align: start; }
-  .shots img { border-radius: 28px; }
-}
 
 /* ---------- Changelog ---------- */
 

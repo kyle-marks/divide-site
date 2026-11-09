@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Divide — a running tab for the people you live with</title>
-  <meta name="description" content="Divide keeps a running tab of shared expenses between roommates and partners, so nobody has to keep score in their head. For iPhone and iPad.">
+  <title>Divide: the shared tab for your home</title>
+  <meta name="description" content="Divide is the shared tab for your home. Couples and roommates add expenses by voice with Siri or in a couple of taps, and always know where they stand. For iPhone, iPad and iPhone Duo.">
   <meta name="theme-color" content="#ECEEE4">
   <link rel="icon" href="icon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -19,43 +20,46 @@
     <a href="privacy/">Privacy</a>
     <a href="support/">Support</a>
   </nav>
+  <a class="button button-small beta-link header-cta" href="mailto:kyle.m.marks@icloud.com?subject=Divide%20beta" hidden>Join the beta</a>
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-copy">
-      <h1>Keep a running tab with the people you live with.</h1>
-      <p class="lede">Add what you spent in a few taps. Divide keeps the tally
-      and shows where you stand, so nobody has to keep score in their head.</p>
+      <h1>The shared tab for your home.</h1>
+      <p class="lede">For couples and roommates. Say an expense to Siri or tap it in,
+      and Divide keeps the running tally, so nobody keeps score in their head.</p>
       <div class="availability">
-        <a class="button" href="mailto:kyle.m.marks@icloud.com?subject=Divide%20beta">Ask to join the beta</a>
-        <p>For iPhone and iPad. Coming to the App Store.</p>
+        <a class="button beta-link" href="mailto:kyle.m.marks@icloud.com?subject=Divide%20beta">Join the beta</a>
+        <p>iPhone, iPad and iPhone Duo · On the App Store January 2027</p>
       </div>
     </div>
 
     <div class="receipt-wrap">
-      <article class="receipt" aria-label="Example tab for October: Drea owes Kyle $66.37">
+      <p class="siri-ask"><span class="siri-dot" aria-hidden="true"></span>“Add $84 groceries to Divide”</p>
+      <article class="receipt" aria-label="Example tab for November: after Siri adds $84 of groceries, Drea owes Kyle $1,047.85">
         <header class="receipt-head">
-          <p class="group">The Apartment</p>
+          <p class="group">Home</p>
           <p>Kyle &amp; Drea · split 50/50</p>
         </header>
         <hr>
         <table>
-          <caption>October 2026</caption>
+          <caption>November 2026</caption>
           <tbody>
-            <tr><th>Hydro<span class="sub">Oct 1 · Kyle · Monthly</span></th><td>86.40</td></tr>
-            <tr><th>Internet<span class="sub">Oct 3 · Kyle · Monthly</span></th><td>75.00</td></tr>
-            <tr><th>Costco stock-up<span class="sub">Oct 5 · Drea · Groceries</span></th><td>182.36</td></tr>
-            <tr><th>Tacos<span class="sub">Oct 9 · Kyle · Dining</span></th><td>42.00</td></tr>
-            <tr><th>Cat food<span class="sub">Oct 12 · Drea · Groceries</span></th><td>39.00</td></tr>
-            <tr><th>Coffee beans<span class="sub">Oct 14 · Kyle · Groceries</span></th><td>24.00</td></tr>
-            <tr><th>Save-On-Foods<span class="sub">Oct 18 · Kyle · Groceries</span></th><td>126.70</td></tr>
+            <tr data-cents="210000" data-payer="kyle"><th>Rent<span class="sub">Nov 1 · Kyle · Monthly</span></th><td>2,100.00</td></tr>
+            <tr data-cents="12670" data-payer="drea"><th>Save-On-Foods<span class="sub">Nov 2 · Drea · Groceries</span></th><td>126.70</td></tr>
+            <tr data-cents="8640" data-payer="kyle"><th>Hydro<span class="sub">Nov 3 · Kyle · Monthly</span></th><td>86.40</td></tr>
+            <tr data-cents="4200" data-payer="kyle"><th>Tacos<span class="sub">Nov 4 · Kyle · Dining</span></th><td>42.00</td></tr>
+            <tr data-cents="7500" data-payer="drea"><th>Internet<span class="sub">Nov 5 · Drea · Monthly</span></th><td>75.00</td></tr>
+            <tr data-cents="3900" data-payer="drea"><th>Cat food<span class="sub">Nov 6 · Drea · Pets</span></th><td>39.00</td></tr>
+            <tr data-cents="2400" data-payer="kyle"><th>Coffee beans<span class="sub">Nov 7 · Kyle · Groceries</span></th><td>24.00</td></tr>
+            <tr class="siri-line" data-cents="8400" data-payer="kyle"><th>Groceries<span class="sub">Nov 8 · Kyle · via Siri</span></th><td>84.00</td></tr>
           </tbody>
         </table>
         <hr>
         <table>
           <tbody>
-            <tr class="total"><th>Total</th><td>575.46</td></tr>
+            <tr class="total"><th>Total</th><td>2,577.10</td></tr>
           </tbody>
         </table>
         <hr>
@@ -64,7 +68,7 @@
             <p class="label">Where you stand</p>
             <p class="who">Drea owes you</p>
           </div>
-          <p class="amount">$66<span class="cents">.37</span></p>
+          <p class="amount">$1,047<span class="cents">.85</span></p>
         </div>
         <hr>
         <p class="receipt-foot">No rush · settle whenever</p>
@@ -72,52 +76,126 @@
     </div>
   </section>
 
-  <section class="tour" aria-labelledby="tour-title">
-    <h2 id="tour-title">Built for the everyday, not the big trip.</h2>
-    <ul class="shots">
-      <li>
-        <img src="shots/home.jpg" width="602" height="1310" alt="Divide's home screen for The Apartment: Drea owes you $66.37, spending by category, and the latest expenses.">
-        <h3>See where you stand</h3>
-        <p>The balance is the first thing you see, with this month's spending by category under it.</p>
-      </li>
-      <li>
-        <img src="shots/add.jpg" width="602" height="1310" alt="Adding an expense: $42.00 for dining above a number pad, paid by you and split 50/50, with three expenses already added this session.">
-        <h3>Add it before you forget</h3>
-        <p>Type the amount and go. Who paid and the split are filled in, and the sheet stays open for the next one, so a whole receipt pile takes a minute.</p>
-      </li>
-      <li>
-        <img src="shots/insights.jpg" width="602" height="1310" alt="Insights for October: $575.46 spent across 7 expenses, broken down by category, with the biggest expenses listed.">
-        <h3>Look back at the month</h3>
-        <p>What the month cost, where it went by category, and which expenses were biggest.</p>
-      </li>
+  <section class="for-home" id="for-home" aria-labelledby="for-home-title">
+    <h2 id="for-home-title">Made for the home, not the trip.</h2>
+    <ul class="for-list">
+      <li><strong>Couples</strong> who split the rent, the groceries and the takeout.</li>
+      <li><strong>Roommates</strong> who share the bills and the shared shelf.</li>
+      <li><strong>Every month</strong>, not one weekend. The tab just keeps running.</li>
+      <li><strong>Settle whenever</strong> it suits you both. Nobody gets nagged.</li>
     </ul>
   </section>
 
-  <section class="ipad" aria-labelledby="ipad-title">
-    <div class="ipad-copy">
-      <h2 id="ipad-title">On iPad, too.</h2>
-      <p>The same tab, laid out for a bigger screen: where you stand on one side
-      and the latest expenses on the other. It works in any orientation and in
-      Split View, and with a keyboard, ⌘N adds an expense.</p>
+  <section class="feature" id="entry" aria-labelledby="entry-title">
+    <div class="feature-copy">
+      <h2 id="entry-title">Add it before you forget.</h2>
+      <p>Type the amount and go. Who paid and the split are already filled in,
+      and the sheet stays open for the next one, so a pile of receipts takes a minute.
+      Or just tell Siri.</p>
     </div>
-    <div class="ipad-device">
-      <img src="shots/ipad-home.jpg" width="1800" height="1350" loading="lazy"
-        alt="Divide on iPad in landscape: Drea owes you $66.37 and spending by category on the left, the latest expenses on the right.">
+    <div class="feature-media phone">
+      <video class="clip" muted loop playsinline preload="none" poster="media/entry.jpg" width="720" height="1564" aria-hidden="true">
+        <source src="media/entry.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
-  <section class="omissions" aria-labelledby="omissions-title">
+  <section class="feature feature-flip" id="recurring" aria-labelledby="recurring-title">
+    <div class="feature-copy">
+      <h2 id="recurring-title">Rent and bills, set once.</h2>
+      <p>Add rent, Hydro and internet as monthly expenses and they post themselves,
+      on the right day, split the way you set them.</p>
+    </div>
+    <div class="feature-media phone">
+      <img src="media/recurring.jpg" width="720" height="1564" loading="lazy"
+        alt="Divide's recurring expenses for Home: Rent, Hydro and Internet, each monthly.">
+    </div>
+  </section>
+
+  <section class="feature" id="insights" aria-labelledby="insights-title">
+    <div class="feature-copy">
+      <h2 id="insights-title">See where the month went.</h2>
+      <p>Spending shows up as blocks sized by category. Tap one for its total, how it
+      compares with last month, and every expense in it, then swipe to the next.</p>
+    </div>
+    <div class="feature-media phone">
+      <video class="clip" muted loop playsinline preload="none" poster="media/insights.jpg" width="720" height="1564" aria-hidden="true">
+        <source src="media/insights.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <section class="duo" id="duo" aria-labelledby="duo-title">
+    <div class="duo-copy">
+      <h2 id="duo-title">Made for iPhone Duo.</h2>
+      <p class="duo-intro">Divide changes shape with the phone.</p>
+      <div class="duo-poses" role="group" aria-label="iPhone Duo pose">
+        <button type="button" class="pose-button" data-pose="closed" aria-pressed="false">
+          <strong>Closed</strong>
+          <span>Add sits in the rail beside your thumb.</span>
+        </button>
+        <button type="button" class="pose-button" data-pose="open" aria-pressed="true">
+          <strong>Open</strong>
+          <span>The register slides in beside the tab, so you can add while you look things over.</span>
+        </button>
+        <button type="button" class="pose-button" data-pose="half" aria-pressed="false">
+          <strong>Half-folded</strong>
+          <span>Insights stands up on top, with the controls in reach below.</span>
+        </button>
+      </div>
+    </div>
+    <div class="duo-stage" data-pose="open">
+      <div class="duo-screen duo-screen-closed">
+        <video class="clip" muted loop playsinline preload="none" poster="media/duo-closed.jpg" aria-hidden="true">
+          <source src="media/duo-closed.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="duo-screen duo-screen-open">
+        <video class="clip" muted loop playsinline preload="none" poster="media/duo-open.jpg" aria-hidden="true">
+          <source src="media/duo-open.mp4" type="video/mp4">
+        </video>
+        <div class="duo-hinge" aria-hidden="true"></div>
+      </div>
+      <div class="duo-screen duo-screen-half">
+        <div class="half-top"><img src="media/duo-half.jpg" alt="" loading="lazy"></div>
+        <div class="half-bottom"><img src="media/duo-half.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad" id="ipad" aria-labelledby="ipad-title">
+    <div class="ipad-copy">
+      <h2 id="ipad-title">On iPad, too.</h2>
+      <p>The same tab, laid out for a bigger screen: where you stand and this month's
+      categories on one side, the latest expenses on the other. It works in any
+      orientation and in Split View, and with a keyboard, ⌘N adds an expense.</p>
+    </div>
+    <div class="ipad-device">
+      <img src="media/ipad-home.jpg" width="1800" height="1350" loading="lazy"
+        alt="Divide on iPad in landscape: Drea owes you $1,005.85 and this month's spending by category on the left, the latest expenses on the right.">
+    </div>
+  </section>
+
+  <section class="omissions" id="omissions" aria-labelledby="omissions-title">
     <h2 id="omissions-title">What Divide leaves out.</h2>
     <dl>
+      <dt>Ads and daily limits</dt>
+      <dd>No ads, no cap on how many expenses you add, and no waiting between them.</dd>
       <dt>Reminders to pay up</dt>
       <dd>Divide never nudges anyone. The balance just carries over, and you settle when it suits you both.</dd>
-      <dt>Your money</dt>
+      <dt>Your bank</dt>
       <dd>Divide doesn't move money or connect to your bank. Pay each other however you already do, then record it.</dd>
-      <dt>Ads and tracking</dt>
-      <dd>No ads, no analytics, and nothing shared with data brokers. Only the people in a group can see what's in it.</dd>
-      <dt>Passwords</dt>
+      <dt>Tracking</dt>
+      <dd>No analytics, and nothing shared with data brokers. Only the people in a group can see what's in it.</dd>
+      <dt>Passwords and email</dt>
       <dd>You sign in with Apple, and Divide never asks for your email address.</dd>
     </dl>
+  </section>
+
+  <section class="get-it" id="get-it" aria-labelledby="get-it-title">
+    <h2 id="get-it-title">On the App Store in January.<br>Try it now in the beta.</h2>
+    <a class="button beta-link" href="mailto:kyle.m.marks@icloud.com?subject=Divide%20beta">Join the beta</a>
+    <p>Free. iPhone, iPad and iPhone Duo.</p>
   </section>
 </main>
 
