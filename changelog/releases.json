@@ -1,5 +1,28 @@
 [
   {
+    "build": 32,
+    "date": "2026-11-08",
+    "headline": "Record a payment any time",
+    "items": [
+      {
+        "kind": "new",
+        "text": "Record a payment whenever one happens, in either direction and for any amount. Choose \"I paid\" or \"they paid me\" from Home or from the Add screen's new Payment switch."
+      },
+      {
+        "kind": "improved",
+        "text": "Paying more than you owe now works: the balance simply flips, and the payment screen shows where you'll stand before you save."
+      },
+      {
+        "kind": "improved",
+        "text": "Balances read as plain sentences, like \"Jaya owes you $40.00\", instead of plus and minus signs."
+      },
+      {
+        "kind": "improved",
+        "text": "Each line on The Tab says what it meant for you: you lent, you borrowed, you paid, or you received."
+      }
+    ]
+  },
+  {
     "build": 31,
     "date": "2026-11-08",
     "headline": "One Add button on the Recurring page",
