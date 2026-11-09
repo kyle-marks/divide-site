@@ -382,18 +382,62 @@ html:has(.header-cta) { scroll-padding-top: 96px; }
   .duo { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; }
 }
 .duo-intro { margin: 0 0 24px; color: #4A5242; font-size: 18px; }
-.duo-poses { margin: 0; }
-.duo-poses dt { font: 400 26px/1.1 var(--serif); }
-.duo-poses dd { margin: 4px 0 0; color: #4A5242; max-width: 30em; }
-.duo-poses dd + dt { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--hairline); }
-.duo-closed { justify-self: center; width: min(100%, 340px); }
-.duo-closed img {
+.duo-poses { display: grid; gap: 10px; }
+.pose-button {
   display: block;
   width: 100%;
+  text-align: left;
+  font: inherit;
+  color: #4A5242;
+  background: transparent;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.pose-button strong { display: block; color: var(--ink); font: 400 24px/1.1 var(--serif); margin-bottom: 2px; }
+.pose-button span { font-size: 15px; }
+.pose-button:hover { border-color: var(--rule); }
+.pose-button[aria-pressed="true"] { background: var(--slip); border-color: var(--rule); box-shadow: 0 1px 2px rgba(35, 42, 31, 0.08); }
+
+/* The device: three poses stacked in one box; the active one unfolds in. */
+.duo-stage {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  justify-self: center;
+  aspect-ratio: 1.15;
+  perspective: 1600px;
+}
+.duo-shot {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
-  border-radius: 30px 64px 64px 30px;
   border: 8px solid var(--ink);
+  background: var(--ink);
   box-shadow: 0 28px 56px rgba(35, 42, 31, 0.18), 0 2px 4px rgba(35, 42, 31, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, transform 0.7s cubic-bezier(0.3, 0.7, 0.2, 1), visibility 0s linear 0.7s;
+}
+.duo-shot-closed { border-radius: 26px 54px 54px 26px; transform: rotateY(-28deg) scale(0.92); }
+.duo-shot-open { border-radius: 34px; transform: rotateY(40deg) scale(0.7); }
+.duo-shot-half { border-radius: 34px; transform-origin: 50% 100%; transform: rotateX(28deg) scale(0.9); }
+.duo-stage[data-pose="closed"] .duo-shot-closed,
+.duo-stage[data-pose="open"] .duo-shot-open,
+.duo-stage[data-pose="half"] .duo-shot-half {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.35s ease 0.12s, transform 0.7s cubic-bezier(0.3, 0.7, 0.2, 1), visibility 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .duo-shot { transition: none !important; }
 }
 
 /* ---------- Landing: closing call to action ---------- */
@@ -464,7 +508,7 @@ html:has(.header-cta) { scroll-padding-top: 96px; }
 }
 .ipad-copy p { margin: 0 0 40px; color: #4A5242; max-width: 34em; }
 .ipad-device {
-  max-width: 560px;
+  max-width: 960px;
   margin: 0 auto;
   padding: clamp(8px, 1.3vw, 16px);
   border-radius: clamp(20px, 3.2vw, 40px);

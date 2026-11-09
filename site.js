@@ -112,10 +112,49 @@
     }).observe(heroButton);
   }
 
+  // ---------- iPhone Duo poses ----------
+
+  function duo() {
+    const stage = document.querySelector(".duo-stage");
+    const buttons = [...document.querySelectorAll(".pose-button")];
+    if (!stage || !buttons.length) return;
+    const order = buttons.map((button) => button.dataset.pose);
+    let timer = null;
+    let touched = false;
+
+    const show = (pose) => {
+      stage.dataset.pose = pose;
+      for (const button of buttons) {
+        button.setAttribute("aria-pressed", String(button.dataset.pose === pose));
+      }
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const start = () => {
+      if (timer || touched || !motionAllowed()) return;
+      timer = setInterval(() => {
+        show(order[(order.indexOf(stage.dataset.pose) + 1) % order.length]);
+      }, 4000);
+    };
+
+    for (const button of buttons) {
+      button.addEventListener("click", () => {
+        touched = true;
+        stop();
+        show(button.dataset.pose);
+      });
+    }
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) start(); else stop();
+      }, { threshold: 0.4 }).observe(stage);
+    }
+  }
+
   const init = () => {
     heroReceipt();
     clips();
     stickyButton();
+    duo();
   };
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

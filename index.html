@@ -131,18 +131,28 @@
     <div class="duo-copy">
       <h2 id="duo-title">Made for iPhone Duo.</h2>
       <p class="duo-intro">Divide changes shape with the phone.</p>
-      <dl class="duo-poses">
-        <dt>Closed</dt>
-        <dd>Add sits in the rail beside your thumb.</dd>
-        <dt>Open</dt>
-        <dd>The register slides in beside the tab, so you can add while you look things over.</dd>
-        <dt>Half-folded</dt>
-        <dd>Insights stands up on top, with the controls in reach below.</dd>
-      </dl>
+      <div class="duo-poses" role="group" aria-label="Show iPhone Duo">
+        <button type="button" class="pose-button" data-pose="closed" aria-pressed="true">
+          <strong>Closed</strong>
+          <span>Add sits in the rail beside your thumb.</span>
+        </button>
+        <button type="button" class="pose-button" data-pose="open" aria-pressed="false">
+          <strong>Open</strong>
+          <span>The register slides in beside the tab, so you can add while you look things over.</span>
+        </button>
+        <button type="button" class="pose-button" data-pose="half" aria-pressed="false">
+          <strong>Half-folded</strong>
+          <span>Insights stands up on top, with the controls in reach below.</span>
+        </button>
+      </div>
     </div>
-    <div class="feature-media duo-closed">
-      <img src="media/duo-closed.jpg" width="600" height="872" loading="lazy"
-        alt="Divide on a closed iPhone Duo: Home shows Drea owes you $66.55, with the tabs and the Add button in a rail down the right side.">
+    <div class="duo-stage" data-pose="closed">
+      <img class="duo-shot duo-shot-closed" src="media/duo-closed.jpg" width="600" height="872" loading="lazy"
+        alt="Closed iPhone Duo: Divide's Home, with the tabs and the Add button in a rail down the right side.">
+      <img class="duo-shot duo-shot-open" src="media/duo-open.jpg" width="1200" height="844" loading="lazy"
+        alt="Open iPhone Duo: Home on the left and the register on the right, with $42.00 typed in.">
+      <img class="duo-shot duo-shot-half" src="media/duo-half.jpg" width="700" height="996" loading="lazy"
+        alt="Half-folded iPhone Duo: the spending line on the top half, the category blocks and tab bar on the bottom.">
     </div>
   </section>
 
@@ -154,8 +164,8 @@
       orientation and in Split View, and with a keyboard, ⌘N adds an expense.</p>
     </div>
     <div class="ipad-device">
-      <img src="media/ipad-home.jpg" width="1200" height="1600" loading="lazy"
-        alt="Divide on iPad: Drea owes you $66.55 and this month's spending by category on the left, the latest expenses on the right.">
+      <img src="media/ipad-home.jpg" width="1600" height="1200" loading="lazy"
+        alt="Divide on iPad in landscape: Drea owes you $66.55 and this month's spending by category on the left, the latest expenses on the right.">
     </div>
   </section>
 
