@@ -379,120 +379,18 @@ a:hover { color: var(--sage); }
   .duo { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 64px; }
 }
 .duo-intro { margin: 0 0 24px; color: #4A5242; font-size: 18px; }
-.duo-poses { display: grid; gap: 10px; }
-.pose-button {
+.duo-poses { margin: 0; }
+.duo-poses dt { font: 400 26px/1.1 var(--serif); }
+.duo-poses dd { margin: 4px 0 0; color: #4A5242; max-width: 30em; }
+.duo-poses dd + dt { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--hairline); }
+.duo-closed { justify-self: center; width: min(100%, 340px); }
+.duo-closed img {
   display: block;
   width: 100%;
-  text-align: left;
-  font: inherit;
-  color: #4A5242;
-  background: transparent;
-  border: 1px solid var(--hairline);
-  border-radius: 14px;
-  padding: 14px 18px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-.pose-button strong { display: block; color: var(--ink); font: 400 24px/1.1 var(--serif); margin-bottom: 2px; }
-.pose-button span { font-size: 15px; }
-.pose-button:hover { border-color: var(--rule); }
-.pose-button[aria-pressed="true"] { background: var(--slip); border-color: var(--rule); box-shadow: 0 1px 2px rgba(35, 42, 31, 0.08); }
-
-/* The device: one frame whose screens swap, with a fold in between. */
-.duo-stage {
-  --open-w: 100%;
-  position: relative;
-  width: 100%;
-  max-width: 620px;
-  justify-self: center;
-  aspect-ratio: var(--duo-open-ratio, 1.42);
-  perspective: 1600px;
-}
-.duo-screen {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  padding: 10px;
-  border-radius: 34px;
-  background: var(--ink);
+  height: auto;
+  border-radius: 30px 64px 64px 30px;
+  border: 8px solid var(--ink);
   box-shadow: 0 28px 56px rgba(35, 42, 31, 0.18), 0 2px 4px rgba(35, 42, 31, 0.12);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s ease, transform 0.7s cubic-bezier(0.3, 0.7, 0.2, 1), visibility 0s linear 0.7s;
-}
-.duo-screen video, .duo-screen img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 25px;
-  background: var(--surface);
-}
-.duo-screen-open { transform-origin: 50% 50%; }
-.duo-hinge {
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 50%;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.35) 15%, rgba(255, 255, 255, 0.35) 85%, transparent);
-  pointer-events: none;
-}
-.duo-screen-closed {
-  width: calc(100% / var(--duo-open-ratio, 1.42) * var(--duo-closed-ratio, 0.46));
-  transform: rotateY(-25deg) scale(0.92);
-}
-.duo-screen-open { transform: rotateY(60deg) scale(0.6); }
-.duo-screen-half {
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-  transform: rotateX(0deg);
-  transform-style: preserve-3d;
-}
-.duo-screen-half .half-top,
-.duo-screen-half .half-bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 50%;
-  overflow: hidden;
-  background: var(--ink);
-  padding: 10px;
-}
-.duo-screen-half .half-top {
-  top: 0;
-  border-radius: 34px 34px 4px 4px;
-  padding-bottom: 0;
-  transform-origin: 50% 100%;
-  transform: rotateX(0deg);
-  transition: transform 0.8s cubic-bezier(0.3, 0.7, 0.2, 1);
-}
-.duo-screen-half .half-bottom {
-  bottom: 0;
-  border-radius: 4px 4px 34px 34px;
-  padding-top: 0;
-  box-shadow: 0 28px 56px rgba(35, 42, 31, 0.18);
-}
-.duo-screen-half img {
-  height: 200%;
-  border-radius: 25px;
-}
-.duo-screen-half .half-top img { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
-.duo-screen-half .half-bottom img { transform: translateY(-50%); border-top-left-radius: 0; border-top-right-radius: 0; }
-
-.duo-stage[data-pose="closed"] .duo-screen-closed,
-.duo-stage[data-pose="open"] .duo-screen-open,
-.duo-stage[data-pose="half"] .duo-screen-half {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition: opacity 0.35s ease 0.15s, transform 0.7s cubic-bezier(0.3, 0.7, 0.2, 1), visibility 0s;
-}
-.duo-stage[data-pose="half"] .half-top { transform: rotateX(-38deg); transition-delay: 0.4s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .duo-screen, .duo-screen-half .half-top { transition: none !important; }
 }
 
 /* ---------- Landing: closing call to action ---------- */
@@ -563,7 +461,7 @@ a:hover { color: var(--sage); }
 }
 .ipad-copy p { margin: 0 0 40px; color: #4A5242; max-width: 34em; }
 .ipad-device {
-  max-width: 960px;
+  max-width: 560px;
   margin: 0 auto;
   padding: clamp(8px, 1.3vw, 16px);
   border-radius: clamp(20px, 3.2vw, 40px);

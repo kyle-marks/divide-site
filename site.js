@@ -69,8 +69,7 @@
   // ---------- Clips play only while on screen ----------
 
   function clips() {
-    // The Duo stage runs its own videos (see duo()).
-    const videos = [...document.querySelectorAll("video.clip")].filter((video) => !video.closest(".duo-stage"));
+    const videos = document.querySelectorAll("video.clip");
     if (!videos.length || !("IntersectionObserver" in window)) return;
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
@@ -102,69 +101,10 @@
     }).observe(heroButton);
   }
 
-  // ---------- iPhone Duo poses ----------
-
-  function duo() {
-    const stage = document.querySelector(".duo-stage");
-    const buttons = [...document.querySelectorAll(".pose-button")];
-    if (!stage || !buttons.length) return;
-    const order = ["closed", "open", "half"];
-    let timer = null;
-    let onScreen = false;
-
-    const show = (pose) => {
-      stage.dataset.pose = pose;
-      for (const button of buttons) {
-        button.setAttribute("aria-pressed", String(button.dataset.pose === pose));
-      }
-      for (const video of stage.querySelectorAll("video")) {
-        const active = video.closest(".duo-screen").classList.contains(`duo-screen-${pose}`);
-        if (active && onScreen && motionAllowed()) {
-          video.preload = "auto";
-          video.currentTime = 0;
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      }
-    };
-    const stop = () => { clearInterval(timer); timer = null; };
-    const start = () => {
-      if (timer || !motionAllowed()) return;
-      timer = setInterval(() => {
-        const next = order[(order.indexOf(stage.dataset.pose) + 1) % order.length];
-        show(next);
-      }, 4000);
-    };
-
-    let touched = false;
-    for (const button of buttons) {
-      button.addEventListener("click", () => {
-        touched = true;
-        stop();
-        show(button.dataset.pose);
-      });
-    }
-
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(([entry]) => {
-        onScreen = entry.isIntersecting;
-        if (onScreen && !touched) {
-          show(stage.dataset.pose);
-          start();
-        } else if (!onScreen) {
-          stop();
-          stage.querySelectorAll("video").forEach((video) => video.pause());
-        }
-      }, { threshold: 0.4 }).observe(stage);
-    }
-  }
-
   const init = () => {
     heroReceipt();
     clips();
     stickyButton();
-    duo();
   };
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
