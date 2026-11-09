@@ -1,5 +1,16 @@
 [
   {
+    "build": 31,
+    "date": "2026-11-08",
+    "headline": "One Add button on the Recurring page",
+    "items": [
+      {
+        "kind": "fixed",
+        "text": "Fixed the Recurring page on an open iPhone Duo showing two identical + buttons in the side bar. You now add a recurring expense from the end of the list."
+      }
+    ]
+  },
+  {
     "build": 30,
     "date": "2026-11-08",
     "headline": "The Tab and You use both halves of iPhone Duo",
