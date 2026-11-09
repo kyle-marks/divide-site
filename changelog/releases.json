@@ -1,5 +1,20 @@
 [
   {
+    "build": 30,
+    "date": "2026-11-08",
+    "headline": "The Tab and You use both halves of iPhone Duo",
+    "items": [
+      {
+        "kind": "improved",
+        "text": "On an open iPhone Duo, The Tab shows your expenses on one half of the screen and the group's balance on the other. Tapping an expense opens it for editing in place of the balance."
+      },
+      {
+        "kind": "improved",
+        "text": "On an open iPhone Duo, the You tab keeps its menu on one half and opens Members, Categories, Recurring, and Invite codes on the other, instead of in a separate sheet."
+      }
+    ]
+  },
+  {
     "build": 29,
     "date": "2026-11-08",
     "headline": "Custom categories in Insights blocks",
