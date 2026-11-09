@@ -273,10 +273,13 @@ a:hover { color: var(--sage); }
 .site-header:has(.header-cta) { position: sticky; top: 0; z-index: 10; background: var(--paper); }
 .button-small { min-height: 40px; padding: 0 16px; border-radius: 11px; font-size: 15px; }
 .header-cta[hidden] { display: none; }
+html:has(.header-cta) { scroll-padding-top: 96px; }
 @media (max-width: 599px) {
-  .site-header { flex-wrap: wrap; padding: 14px 16px; }
-  .site-nav { gap: 14px; }
-  .header-cta { order: 3; width: 100%; justify-content: center; }
+  .site-header:has(.header-cta) { padding: 14px 16px; min-height: 72px; }
+  .site-header:has(.header-cta) .site-nav { gap: 14px; }
+  /* The beta button takes the nav's place, so the header never changes height. */
+  .site-header:has(.header-cta:not([hidden])) .site-nav { display: none; }
+  html:has(.header-cta) { scroll-padding-top: 88px; }
 }
 
 /* ---------- Landing: Siri request above the receipt ---------- */
@@ -307,7 +310,7 @@ a:hover { color: var(--sage); }
 
 /* Before the hero plays (set by site.js only when motion is allowed). */
 .is-rewound .siri-ask { opacity: 0; transform: translateY(6px); }
-.is-rewound .siri-line { display: none; }
+.is-rewound .siri-line, .siri-line.is-pending { display: none; }
 .siri-ask { transition: opacity 0.4s ease, transform 0.4s ease; }
 .siri-line.is-printing th, .siri-line.is-printing td { animation: print 0.5s ease-out both; }
 @keyframes print { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
@@ -403,12 +406,12 @@ a:hover { color: var(--sage); }
   text-align: center;
 }
 .get-it h2 { margin: 0 auto 32px; }
-.get-it p { margin: 16px 0 0; color: var(--muted); font-size: 15px; }
+.get-it p { margin: 16px 0 0; color: #4A5242; font-size: 15px; }
 
 /* Phones: the side gutter is 16px. */
 @media (max-width: 599px) {
   .hero, .for-home, .feature, .duo, .ipad, .omissions, .get-it { padding-left: 16px; padding-right: 16px; }
-  .site-footer { padding-left: 16px; padding-right: 16px; }
+  .site-header:has(.header-cta) ~ .site-footer { padding-left: 16px; padding-right: 16px; }
 }
 
 /* ---------- Landing: what it leaves out ---------- */

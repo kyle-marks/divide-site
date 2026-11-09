@@ -27,9 +27,12 @@ ffmpeg -v error -y -ss "$TRIM_START" -t "$LEN" -i "$IN" -an -vf "$FILTER" -r 30 
   -c:v libx264 -preset slow -crf "$CRF" -profile:v high -movflags +faststart "$OUT/$NAME.mp4"
 ffmpeg -v error -y -sseof -0.1 -i "$OUT/$NAME.mp4" -frames:v 1 -q:v 4 "$OUT/$NAME.jpg"
 
+rm -f "$OUT/$NAME.webm"
 if ffmpeg -hide_banner -encoders 2>/dev/null | grep -q libsvtav1; then
   ffmpeg -v error -y -i "$OUT/$NAME.mp4" -an -c:v libsvtav1 -crf 42 -preset 6 -svtav1-params log-level=0 "$OUT/$NAME.webm" 2>/dev/null
   if [ "$(stat -f%z "$OUT/$NAME.webm")" -ge "$(stat -f%z "$OUT/$NAME.mp4")" ]; then rm "$OUT/$NAME.webm"; fi
+else
+  echo "warning: ffmpeg has no libsvtav1, so no WebM for $NAME (remove its webm <source> or install an AV1 encoder)" >&2
 fi
 
 for f in "$OUT/$NAME".*; do

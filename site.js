@@ -16,6 +16,9 @@
     const wrap = document.querySelector(".receipt-wrap");
     const siriLine = wrap && wrap.querySelector(".siri-line");
     if (!siriLine || !motionAllowed()) return;
+    // Arriving late (slow connection): the receipt has already fed out with
+    // its final numbers, so leave it rather than rewinding in view.
+    if (performance.now() > 1500) return;
 
     const totalCell = wrap.querySelector(".total td");
     const amount = wrap.querySelector(".amount");
@@ -41,6 +44,7 @@
     };
 
     wrap.classList.add("is-rewound");
+    siriLine.classList.add("is-pending");
     totalCell.textContent = money(before.total);
     setAmount(before.owed);
 
@@ -59,9 +63,16 @@
     setTimeout(() => {
       wrap.classList.remove("is-rewound");
       setTimeout(() => {
+        siriLine.classList.remove("is-pending");
         siriLine.classList.add("is-printing");
         countUp(before.total, after.total, 600, (c) => { totalCell.textContent = money(c); });
         countUp(before.owed, after.owed, 600, setAmount);
+        // Land on the final numbers even if animation frames are paused
+        // (a background tab), so the receipt never sits half-updated.
+        setTimeout(() => {
+          totalCell.textContent = money(after.total);
+          setAmount(after.owed);
+        }, 700);
       }, 900);
     }, 1900);
   }

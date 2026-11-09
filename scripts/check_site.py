@@ -20,7 +20,8 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAX_FILE = 1.6 * 1024 * 1024
 MAX_TOTAL = 6.5 * 1024 * 1024
-FORBIDDEN = ["e-transfer", "interac", "splitwise", "tricount", "receipt scanning", "divide plus"]
+FORBIDDEN = ["e-transfer", "interac", "splitwise", "tricount", "receipt scanning", "divide plus",
+             "push notification", "per month", "/mo", "subscription"]
 
 
 class Page(HTMLParser):
@@ -72,8 +73,12 @@ class Page(HTMLParser):
 
 
 def cents(text):
+    """Signed cents from text like '$1,047.85' or '-$3.00'; None if there's no number."""
     digits = re.sub(r"[^0-9.]", "", text)
-    return round(float(digits) * 100)
+    if not digits:
+        return None
+    value = round(float(digits) * 100)
+    return -value if "-" in text or "\u2212" in text else value
 
 
 def check(page):
@@ -88,6 +93,8 @@ def check(page):
         half = amount // 2
         kyle_share = amount - half if payer == "kyle" else half
         kyle_net += (amount if payer == "kyle" else 0) - kyle_share
+    if kyle_net <= 0:
+        failures.append(f"receipt: the lines say Kyle owes Drea ({kyle_net} cents) but the page says 'Drea owes you'")
     if kyle_net != cents(page.amount_text):
         failures.append(f"receipt: Drea owes {kyle_net} cents but the page says {page.amount_text.strip()!r}")
 
