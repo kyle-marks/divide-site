@@ -1,5 +1,16 @@
 [
   {
+    "build": 33,
+    "date": "2026-11-24",
+    "headline": "Insights fix on the open iPhone Duo",
+    "items": [
+      {
+        "kind": "fixed",
+        "text": "Fixed Divide freezing and closing when you tapped quickly through the category blocks in Insights on the open iPhone Duo."
+      }
+    ]
+  },
+  {
     "build": 32,
     "date": "2026-11-08",
     "headline": "Record a payment any time",
